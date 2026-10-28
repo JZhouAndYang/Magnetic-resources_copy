@@ -1,0 +1,17 @@
+# ========== 不需要上传到 GitHub ==========
+node_modules/
+.trae/
+.trae-html-share-packages/
+*.log
+.env
+.DS_Store
+.vercel/
+.netlify/
+.serverless/
+
+# 本地 Express 版(Netlify 部署不需要)
+server.js
+package-lock.json
+edgeone.json
+node-functions/
+screenshots/
