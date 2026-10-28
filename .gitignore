@@ -1,9 +1,0 @@
-node_modules/
-.trae/
-.trae-html-share-packages/
-*.log
-.env
-.DS_Store
-.vercel/
-.netlify/
-.serverless/
