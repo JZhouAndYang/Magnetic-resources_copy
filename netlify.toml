@@ -1,0 +1,24 @@
+# ============================================================
+# Netlify 部署配置
+# 前端静态文件放在项目根目录,后端函数在 api/ 目录
+# ============================================================
+
+[build]
+  publish = "."
+  functions = "api"
+
+# --- 路径映射 ---
+# api/search.js 注册后函数原始 URL = /.netlify/functions/search
+# 前端 fetch('/api/search'),rewrite 内部重过去
+[[redirects]]
+  from = "/api/search"
+  to = "/.netlify/functions/search"
+  status = 200
+
+# --- SPA fallback ---
+# Netlify 处理顺序:Functions → Redirects(按序) → Static
+# /api/search 优先命中,不会走到这里
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
